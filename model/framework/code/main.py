@@ -1,40 +1,44 @@
-# imports
-import os
-import csv
-import joblib
+import pandas as pd
+import numpy as np
 import sys
-from rdkit import Chem
-from rdkit.Chem.Descriptors import MolWt
+import os
+
+# current file directory
+file_path = os.path.dirname(os.path.abspath(__file__))
+
+# hide gpus
+os.environ["CUDA_VISIBLE_DEVICES"]="-1"
+
+# point to the rexgen_direct paths
+path_root = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "..")
+sys.path.append(os.path.abspath(path_root))
+
+from framework.rexgen_direct.rexgen_direct.core_wln_global.directcorefinder import DirectCoreFinder 
+from framework.rexgen_direct.rexgen_direct.rank_diff_wln.directcandranker import DirectCandRanker
+from framework.rexgen_direct.rexgen_direct.scripts.eval_by_smiles import edit_mol
 
 # parse arguments
 input_file = sys.argv[1]
 output_file = sys.argv[2]
 
-# current file directory
-root = os.path.dirname(os.path.abspath(__file__))
+# read smiles input and model metadata csv files
+smiles_df = pd.read_csv(input_file)
+reaction_smiles_list = smiles_df.iloc[:, 0].to_list()
 
-# checkpoints directory
-checkpoints_dir = os.path.abspath(os.path.join(root, "..", "..", "checkpoints"))
+# load rexgen core models
+directcorefinder = DirectCoreFinder()
+directcorefinder.load_model()
+directcandranker = DirectCandRanker()
+directcandranker.load_model()
 
-# read checkpoints (here, simply an integer number: 42)
-ckpt = joblib.load(os.path.join(checkpoints_dir, "checkpoints.joblib"))
-
-# model to be run (here, calculate the Molecular Weight and add ckpt (42) to it)
-def my_model(smiles_list, ckpt):
-    return [MolWt(Chem.MolFromSmiles(smi))+ckpt for smi in smiles_list]
+outcome_df = pd.DataFrame(columns=['products'])
+for react in reaction_smiles_list:
+    (react, bond_preds, bond_scores, cur_att_score) = directcorefinder.predict(react)
+    outcomes = directcandranker.predict(react, bond_preds, bond_scores)
+    if len(outcomes) == 0:
+        outcome_df.loc[len(outcome_df.index)] = [np.NaN]
+    else:
+        outcome_df.loc[len(outcome_df.index)] = [outcomes[0]['smiles']]
     
-# read SMILES from .csv file, assuming one column with header
-with open(input_file, "r") as f:
-    reader = csv.reader(f)
-    next(reader) # skip header
-    smiles_list = [r[0] for r in reader]
-    
-# run model
-outputs = my_model(smiles_list, ckpt)
-
-# write output in a .csv file
-with open(output_file, "w") as f:
-    writer = csv.writer(f)
-    writer.writerow(["value"]) # header
-    for o in outputs:
-        writer.writerow([o])
+# write output to csv
+outcome_df.to_csv(output_file, index=False)
