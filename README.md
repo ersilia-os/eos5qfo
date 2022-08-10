@@ -23,7 +23,7 @@ The GPL-v3 license applies to all parts of the repository that are not externall
 
 # History 
 - Model was downloaded on 8/5/2022 from https://github.com/connorcoley/rexgen_direct
-- Files enumerated in [NOTICE.md]() contain modified import statements for Ersilia compatibility.
+- Files enumerated in [NOTICE.md](https://github.com/ersilia-os/eos5qfo/blob/main/model/framework/rexgen_direct/NOTICE.md) contain modified import statements for Ersilia compatibility.
 
 # About us
 The [Ersilia Open Source Initiative](https://ersilia.io) is a Non Profit Organization ([1192266](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5170657/full-print)) with the mission is to equip labs, universities and clinics in LMIC with AI/ML tools for infectious disease research.
