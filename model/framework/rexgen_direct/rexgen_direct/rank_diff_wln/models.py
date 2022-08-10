@@ -1,4 +1,6 @@
 import tensorflow as tf
+
+# Imports below were edited for ersilia compatibility
 from framework.rexgen_direct.rexgen_direct.rank_diff_wln.mol_graph_direct_useScores import max_nb
 from framework.rexgen_direct.rexgen_direct.rank_diff_wln.nn import *
 

@@ -1,28 +1,29 @@
-# Model title
+# RexGen
 ## Model identifiers
-- Slug:
-- Ersilia ID: 
-- Tags: 
+- Slug: rexgen
+- Ersilia ID: eos5qfo
+- Tags: GNN, ML, synthesis
 
 # Model description
-Short description of the model in one or two sentences.
-- Input:
-- Output: {unit and description of output) 
-- Model type: (Regression or Classification)
-- Training set: (number of compounds and link to the training data)
-- Mode of training: (is it pretrained? that is were the checkpoints downloaded and used to train the model? or is it retrained? that is trained from scratch with an updated data)
+Utilizes a Weisfeiler-Lehman graph neural network to predict the products of an organic reaction given the reactants. 
+- Input: Reactants as a SMILES string
+- Output: Products as a SMILES string
+- Model type: Generative
+- Training set: 400,000. Training data is accessible via https://github.com/dan2097/patent-reaction-extraction.
+- Mode of training: Pretrained
 
 # Source code
-Cite the source publication.
-- Code: include link to the source code
-- Checkpoints: include the link to the checkpoints used if model is a pretrained model
+Wengong Jin, Connor Coley, Regina Barzilay, Tommi Jaakkola. Predicting Organic Reaction Outcomes with Weisfeiler-Lehman Network. arXiv:1709.04555, 13, Sepember 2017. 	
+
+- Code: https://github.com/connorcoley/rexgen_direct
+- Checkpoints: https://github.com/connorcoley/rexgen_direct/tree/master/rexgen_direct/core_wln_global/model-300-3-direct
 
 # License
-State the licences used which are GPL v3 license used by Ersilia and the license used by the source code, if any exists. Use [this guide]() on how to license new models to be incorporated into Ersilia's model hub 
+The GPL-v3 license applies to all parts of the repository that are not externally maintained libraries. This repository uses the externally maintained library "rexgen_direct", located at [/model/framework](https://github.com/ersilia-os/eos5qfo/tree/main/model/framework/rexgen_direct) and licensed under a [GNU General Public License](https://github.com/ersilia-os/eos5qfo/blob/main/model/framework/rexgen_direct/LICENSE).
 
 # History 
-- State the date when the model was downloaded and incorporated into Ersilia.
-- List any essential steps/modifications to the original code
+- Model was downloaded on 8/5/2022 from https://github.com/connorcoley/rexgen_direct
+- Files enumerated in [NOTICE.md]() contain modified import statements for Ersilia compatibility.
 
 # About us
 The [Ersilia Open Source Initiative](https://ersilia.io) is a Non Profit Organization ([1192266](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5170657/full-print)) with the mission is to equip labs, universities and clinics in LMIC with AI/ML tools for infectious disease research.

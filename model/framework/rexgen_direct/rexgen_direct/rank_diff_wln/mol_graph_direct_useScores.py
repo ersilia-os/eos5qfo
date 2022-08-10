@@ -2,6 +2,8 @@ import rdkit
 import rdkit.Chem as Chem
 import numpy as np
 import random
+
+# Import below was edited for ersilia compatibility
 from framework.rexgen_direct.rexgen_direct.rank_diff_wln.edit_mol_direct_useScores import get_product_smiles
 from collections import defaultdict
 

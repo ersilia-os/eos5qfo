@@ -5,6 +5,7 @@ import os
 path_root = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "..")
 sys.path.append(os.path.abspath(path_root))
 
+# Imports below were edited for ersilia compatibility
 from framework.rexgen_direct.rexgen_direct.rank_diff_wln.nn import linearND, linear
 from framework.rexgen_direct.rexgen_direct.rank_diff_wln.mol_graph_direct_useScores import atom_fdim as adim, bond_fdim as bdim, max_nb, smiles2graph, smiles2graph, bond_types
 from framework.rexgen_direct.rexgen_direct.rank_diff_wln.models import *

@@ -6,6 +6,7 @@ import sys
 path_root = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "..")
 sys.path.append(os.path.abspath(path_root))
 
+# Imports below were edited for ersilia compatibility
 from framework.rexgen_direct.rexgen_direct.core_wln_global.nn import linearND, linear
 from framework.rexgen_direct.rexgen_direct.core_wln_global.models import *
 from framework.rexgen_direct.rexgen_direct.core_wln_global.ioutils_direct import *
