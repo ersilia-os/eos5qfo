@@ -86,7 +86,7 @@ class Model(object):
                 r_ = None
             else:
                 r_ = [String(x) for x in r]
-            R += [{"outcome": r_}]
+            R += [r_]
         result = {
             "result": R
         }
