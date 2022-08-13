@@ -82,7 +82,11 @@ class Model(object):
             result = json.load(f)
         R = []
         for r in result:
-            R += [{"outcome": [String(x) for x in r]}]
+            if r is None:
+                r_ = None
+            else:
+                r_ = [String(x) for x in r]
+            R += [{"outcome": r_}]
         result = {
             "result": R
         }
