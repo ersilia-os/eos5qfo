@@ -90,7 +90,9 @@ class Model(object):
         result = {
             "result": R
         }
-        shutil.rmtree(tmp_folder)
+        print(result)
+        print(tmp_folder)
+        #shutil.rmtree(tmp_folder)
         return result
 
 
