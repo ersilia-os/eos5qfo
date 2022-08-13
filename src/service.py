@@ -86,13 +86,11 @@ class Model(object):
                 r_ = None
             else:
                 r_ = [String(x) for x in r]
-            R += [r_]
+            R += [{"products": r_}]
         result = {
             "result": R
         }
-        print(result)
-        print(tmp_folder)
-        #shutil.rmtree(tmp_folder)
+        shutil.rmtree(tmp_folder)
         return result
 
 
