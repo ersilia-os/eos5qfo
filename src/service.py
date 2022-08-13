@@ -88,7 +88,8 @@ class Model(object):
                 r_ = [String(x) for x in r]
             R += [{"products": r_}]
         result = {
-            "result": R
+            "result": R,
+            "meta": None
         }
         shutil.rmtree(tmp_folder)
         return result
