@@ -6,7 +6,7 @@
 
 # Model description
 Utilizes a Weisfeiler-Lehman graph neural network to predict the products of an organic reaction given the reactants. 
-- Input: Reactants as a SMILES string
+- Input: Reactants as a single SMILES string. Individual reactants are in SMILES format and combined into the same string with a '.' separator (e.g. reactants “CCC” and “CCO” are input as “CCC.CCO”). 
 - Output: Products as a SMILES string
 - Model type: Generative
 - Training set: 400,000. Training data is accessible via https://github.com/dan2097/patent-reaction-extraction.
