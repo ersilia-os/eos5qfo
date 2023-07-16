@@ -23,6 +23,9 @@ Utilizes a Weisfeiler-Lehman network (attentive mechanism) to predict the produc
 * [Source Code](https://github.com/connorcoley/rexgen_direct)
 * Ersilia contributor: [svolk19-stanford ](https://github.com/svolk19-stanford )
 
+## Ersilia model URLs
+* [GitHub](https://github.com/ersilia-os/eos5qfo)
+
 ## Citation
 
 If you use this model, please cite the [original authors](https://arxiv.org/pdf/1709.04555v3.pdf) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
