@@ -4,7 +4,7 @@ import numpy as np
 import random
 
 # Import below was edited for ersilia compatibility
-from framework.rexgen_direct.rexgen_direct.rank_diff_wln.edit_mol_direct_useScores import get_product_smiles
+from rexgen_direct.rexgen_direct.rank_diff_wln.edit_mol_direct_useScores import get_product_smiles
 from collections import defaultdict
 
 elem_list = ['C', 'N', 'O', 'S', 'F', 'Si', 'P', 'Cl', 'Br', 'Mg', 'Na', 'Ca', 'Fe', 'As', 'Al', 'I', 'B', 'V', 'K', 'Tl', 'Yb', 'Sb', 'Sn', 'Ag', 'Pd', 'Co', 'Se', 'Ti', 'Zn', 'H', 'Li', 'Ge', 'Cu', 'Au', 'Ni', 'Cd', 'In', 'Mn', 'Zr', 'Cr', 'Pt', 'Hg', 'Pb', 'W', 'Ru', 'Nb', 'Re', 'Te', 'Rh', 'Tc', 'Ba', 'Bi', 'Hf', 'Mo', 'U', 'Sm', 'Os', 'Ir', 'Ce','Gd','Ga','Cs', 'unknown']
