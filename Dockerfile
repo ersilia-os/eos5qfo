@@ -4,6 +4,7 @@ MAINTAINER ersilia
 RUN conda install -c rdkit rdkit=2017.09.1 -y
 RUN python -m pip install tensorflow==1.6.0
 RUN python -m pip install numpy==1.19.2
+RUN conda install -c conda-forge xorg-libxrender -y
 
 WORKDIR /repo
 COPY . /repo
