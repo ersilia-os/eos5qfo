@@ -25,6 +25,8 @@ Utilizes a Weisfeiler-Lehman network (attentive mechanism) to predict the produc
 
 ## Ersilia model URLs
 * [GitHub](https://github.com/ersilia-os/eos5qfo)
+* [AWS S3](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos5qfo.zip)
+* [DockerHub](https://hub.docker.com/r/ersiliaos/eos5qfo) (AMD64)
 
 ## Citation
 

@@ -7,9 +7,9 @@ path_root = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "..")
 sys.path.append(os.path.abspath(path_root))
 
 # Imports below were edited for ersilia compatibility
-from framework.rexgen_direct.rexgen_direct.core_wln_global.nn import linearND, linear
-from framework.rexgen_direct.rexgen_direct.core_wln_global.models import *
-from framework.rexgen_direct.rexgen_direct.core_wln_global.ioutils_direct import *
+from rexgen_direct.rexgen_direct.core_wln_global.nn import linearND, linear
+from rexgen_direct.rexgen_direct.core_wln_global.models import *
+from rexgen_direct.rexgen_direct.core_wln_global.ioutils_direct import *
 import math, random
 from collections import Counter
 from optparse import OptionParser
@@ -27,7 +27,7 @@ batch_size = 2 # just fake it, make two
 hidden_size = 300
 depth = 3
 model_path = os.path.join(os.path.dirname(__file__), "model-300-3-direct/model.ckpt-140000")
-from framework.rexgen_direct.rexgen_direct.core_wln_global.mol_graph import atom_fdim as adim, bond_fdim as bdim, max_nb, smiles2graph_list as _s2g
+from rexgen_direct.rexgen_direct.core_wln_global.mol_graph import atom_fdim as adim, bond_fdim as bdim, max_nb, smiles2graph_list as _s2g
 smiles2graph_batch = partial(_s2g, idxfunc=lambda x:x.GetIntProp('molAtomMapNumber') - 1)
 
 class DirectCoreFinder():
