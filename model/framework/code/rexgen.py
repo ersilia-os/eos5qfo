@@ -26,7 +26,6 @@ directcandranker.load_model()
 
 
 def rexgen(smiles_list):
-    print(smiles_list)
     outcome_list = []
     for reaction_list in smiles_list:
         react_smiles= '.'.join(reaction_list)

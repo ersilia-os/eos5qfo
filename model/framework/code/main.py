@@ -21,7 +21,8 @@ with open(input_file, "r") as f:
     next(reader)  # skip header
     for r in reader:
         if len(r)==1:
-            raise ValueError("One smiles " + r[0] + " found.Can only react two or more smiles.")
+            smiles_list.append([r[0]] + [k[0] for k in reader])
+            break
         smiles_list.append(r)
     
 
