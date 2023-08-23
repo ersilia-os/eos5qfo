@@ -18,10 +18,6 @@ from rexgen_direct.rexgen_direct.core_wln_global.directcorefinder import DirectC
 from rexgen_direct.rexgen_direct.rank_diff_wln.directcandranker import DirectCandRanker
 from rexgen_direct.rexgen_direct.scripts.eval_by_smiles import edit_mol
 
-
-
-
-
 # load rexgen core models
 directcorefinder = DirectCoreFinder()
 directcorefinder.load_model()

@@ -3,18 +3,14 @@ import os
 import csv
 import sys
 import json
-from rdkit import Chem
-from rdkit.Chem.Descriptors import MolWt
 from rexgen import rexgen
+
 # parse arguments
 input_file = sys.argv[1]
 output_file = sys.argv[2]
 
 # current file directory
 root = os.path.dirname(os.path.abspath(__file__))
-
-
-
 
 # read SMILES from .csv file, assuming one column with header
 with open(input_file, "r") as f:
@@ -29,7 +25,6 @@ outputs = rexgen(smiles_list)
 input_len = len(smiles_list)
 output_len = len(outputs)
 assert input_len == output_len
-
 
 with open(output_file, "w") as json_file:
     json.dump(outputs, json_file, indent=4) 
